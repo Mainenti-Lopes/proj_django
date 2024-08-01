@@ -1,3 +1,7 @@
 from django.contrib import admin
+from app_cad_usuarios.models import Usuario
 
-# Register your models here.
+class UsuariosAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'idade')
+
+admin.site.register(Usuario, UsuariosAdmin)
