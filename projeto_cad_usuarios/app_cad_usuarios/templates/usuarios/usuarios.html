@@ -1,18 +1,20 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
-<div class="container">
+<div style="text-align: center;" class="container">
     <h1>Usuários Cadastrados:</h1>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped" bgcolor="WHITE">
         <tr>
-            <th>id</th>
-            <th>nome</th>
-            <th>idade</th>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th></th>
         </tr>
         {% for usuario in usuarios %}
         <tr>
             <td>{{usuario.id_usuario}}</td>
             <td>{{usuario.nome}}</td>
             <td>{{usuario.idade}}</td>
+            <td><a href="confirm_remove/{{ usuario.id_usuario }}">Remover</a></td>
         </tr>
         {% endfor %}
     </table>

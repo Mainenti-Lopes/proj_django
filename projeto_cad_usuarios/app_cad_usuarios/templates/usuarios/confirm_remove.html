@@ -1,0 +1,19 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<div style="text-align: center;" class="container">
+    <h1>Tem certeza que deseja remover o Usuário</h1>
+    <h1>{{nome}} de {{idade}} anos</h1>
+</div>
+<form action="../remove_usuario/{{ id_usuario }}" method="post">
+    {% csrf_token %}
+    <div style="text-align: center;" class="container">
+      <button class="form-control-sm">Confirma</button>
+    </div>
+  </form>
+  <form action="{% url 'home' %}" method="post">
+      {% csrf_token %}
+      <div style="text-align: center;" class="container">
+        <button class="form-control-sm">Cancelar</button>
+      </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+<br><br>
+<div style="text-align: center;" class="container">
+        <h1>Usuário Removido</h1>
+</div>
+<br><br>
+<form action="{% url 'mostra_usuarios' %}" method="post">
+    {% csrf_token %}
+    <div style="text-align: center;" class="container">
+      <button class="form-control-sm">Mostrar Tabela de Usuários</button>
+    </div>
+  </form>
+  <form action="{% url 'home' %}" method="post">
+      {% csrf_token %}
+      <div style="text-align: center;" class="container">
+        <button class="form-control-sm">Voltar a Tela Inicial</button>
+      </div>
+    </form>
+{% endblock %}
